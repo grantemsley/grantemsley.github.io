@@ -11,7 +11,7 @@ github_username: grantemsley
 
 # Build settings
 markdown: kramdown
-remote_theme: heiswayi/textlog
+theme: minima
 plugins:
   - jekyll-feed
   - jekyll-sitemap
