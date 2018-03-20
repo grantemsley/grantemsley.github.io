@@ -1,0 +1,23 @@
+title: Grant's Blog
+description: >
+  This is where I dump info about things I learn, projects I've worked on, etc. Mostly for my own reference, but if others find it helpful, great!
+baseurl: ""
+timezone: America/Toronto
+show_excerpts: false
+permalink: /:categories/:title
+
+# Social
+github_username: grantemsley
+
+# Build settings
+markdown: kramdown
+theme: minima
+plugins:
+  - jekyll-feed
+  - jekyll-sitemap
+  
+defaults:
+  - scope:
+      path: _posts
+    values:
+      layout: post
