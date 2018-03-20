@@ -1,17 +1,23 @@
-title: Grant's Blog
+title: Random Notes and Stuff
+author: Grant Emsley
 description: >
   This is where I dump info about things I learn, projects I've worked on, etc. Mostly for my own reference, but if others find it helpful, great!
 baseurl: ""
 timezone: America/Toronto
 show_excerpts: false
 permalink: /:categories/:title
+rss: rss
+minima:
+  date_format: "%Y-%m-%d"
 
 # Social
 github_username: grantemsley
 
+header_pages:
+  - about.html
+
 # Build settings
 markdown: kramdown
-theme: minima
 plugins:
   - jekyll-feed
   - jekyll-sitemap
