@@ -1,7 +1,5 @@
 ---
 title: Moving blog to github pages
-layout: post
-categories: misc
 ---
 
 I'm moving my blog to github pages.

@@ -13,9 +13,6 @@ minima:
 # Social
 github_username: grantemsley
 
-header_pages:
-  - about.html
-
 # Build settings
 markdown: kramdown
 plugins:
