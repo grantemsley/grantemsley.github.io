@@ -1,5 +1,5 @@
 ---
-title: Project: VCarve flower
+title: Project - VCarve flower
 category: CNC
 ---
 I've been wanting to try out relief carving on my CNC machine for awhile now, but hadn't found a decent set of tools to do it.
