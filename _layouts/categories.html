@@ -1,0 +1,29 @@
+---
+layout:   defaultfull
+title:    Categories
+---
+
+{{content}}
+
+<div class="categories">
+  {% assign sorted_cats = site.categories | sort %}
+  {% for category in sorted_cats %}
+    <div class="category">
+      <h2 id="{{ category[0] | slugify }}">{{ category[0] }}</h2>
+      <ul class="post-list">
+        {% assign sorted_posts = category[1] | sort: 'title' %}
+        {% for post in sorted_posts %}
+          <li class="spaced">
+            {%- assign date_format = site.minima.date_format | default: "%Y-%m-%d" -%}
+            <h3>
+              <span class="post-link">
+                <small>{{ post.date | date: date_format }}</small>
+                <a href="{{ post.url | relative_url }}">{{ post.title | escape }}</a>
+              </span>
+            </h3>
+          </li>
+        {% endfor %}
+      </ul>
+    </div>
+  {% endfor %}
+</div>
