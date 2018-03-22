@@ -3,3 +3,4 @@ _site/
 Gemfile.lock
 .bundle
 .sass-cache
+*.jpg_original
