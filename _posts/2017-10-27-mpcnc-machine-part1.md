@@ -15,15 +15,16 @@ The Dewalt 660 cutout tool, bearings, stepper motors, belts, pulleys and leadscr
 
 I already had the RAMPS board and Arduino as spares for my 3D printer. The entire kit from [FastTech](http://www.fasttech.com) was around $40 USD.
 
-The EMT came from Lowes.  Also a shop vac, a couple types of squares and some clamps.
+The EMT came from Lowes.  Also a shop vac, a couple types of squares and some clamps.  I used some 3/4" laminated particleboard I got dirt cheap from the Restore store. While I was there I also found a huge sheet of T slot board for $8. Had a big crack in it, but since I just need small sections it's perfect for my use. That will be my spoil board and let me slot clamps into it.
 
 ## Printed Parts
 
 Printing all the parts took a lot of time and filament. I'm using a Wanhao i3 printer. I tried to work out the printing order to use up as much of the partial spools I had lying around as possible (which is why my MPCNC is such a random assortment of colours). Altogether, it took roughly 2.5 1kg spools and a week or so of printing time.
 
-## Misc Stuff
-
-I used some 3/4" laminated particleboard I got dirt cheap from the Restore store. While I was there I also found a huge sheet of T slot board for $8. Had a big crack in it, but since I just need small sections it's perfect for my use. That will be my spoil board and let me slot clamps into it.
+<div class="gallery">
+{% include image.html url="mpcnc/parts1.jpg" description="All the parts for my MPCNC" %}
+{% include image.html url="mpcnc/parts2.jpg" description="More parts" %}
+</div>
 
 ## Sizing Considerations
 
@@ -42,7 +43,7 @@ I ended up going for an approximate 25"x16" working area. That required a base o
 
 Basically I just followed the guide on the MPCNC website.  It's pretty well written.
 
-### Wiring
+## Wiring
 
 Here I deviated from the instructions. I want to use ethernet cables to connect the control box so I can easily disconnect it. People had made brackets for previous versions of the MPCNC to add keystone jacks, but they are no longer compatible. So I've created some of my own.
 
@@ -54,11 +55,12 @@ I was hesitant about using a single wire in the ethernet cable for each stepper 
 
 For the Z axis, I created a holder that will fit inside the EMT and have a keystone jack pop into it. Drill a hole in the side to feed the wires in and punch them down to the keystone jack.
 <div class="gallery">
+{% include image.html url="mpcnc/zaxis.jpg" description="Fully assembled Z axis." %}
 {% include image.html url="mpcnc/zaxis-holder.jpg" description="Z Axis holder with hole drilled." %}
 {% include image.html url="mpcnc/stepper-wires.jpg" description="Stepper wires cut and punched down." %}
 {% include image.html url="mpcnc/zaxis-wiring.jpg" description="Slack wire shoved down the EMT and jack inserted." %}
 </div>
-## X and Y Axes
+### X and Y Axes
 
 First decide which side you want the control box on.  Then on the front and opposite side, run the wires for the stepper motor through the tube to the other side.  Mine were a little too short, so I extended them with some 4 pin male dupont headers, and taped the connectors together so they didn't come apart in the tube.  To feed the wires through, I taped them to the end of an ethernet cable and pushed the ethernet cable through.  The stepper wires aren't stiff enough to feed through on their own.
 
@@ -70,13 +72,47 @@ Instead I created a part that mounts above the stepper and fits a keystone jack.
 
 Each stepper is punched down to one side of the keystone jack.  The slack wire from the close stepper is shoved in the wire loom to keep it out of the way.
 
-I'm still printing the parts to do the other axis, then I can install the belts.
-
 <div class="gallery">
 {% include image.html url="mpcnc/farside-stepper.jpg" description="Far side from control box" %}
 {% include image.html url="mpcnc/back-side-showing-wiring.jpg" description="Back side showing wiring" %}
 {% include image.html url="mpcnc/keystone-brackets.jpg" description="Bracket for keystone jacks." %}
 </div>
 
+## Control Box
 
+I'm using an arduino with a RAMPS 1.4 board.
 
+The case is [this one](https://www.thingiverse.com/thing:1716182) that I 3D printed.  The screw holes all got M3 knurled inserts heat pressed into the plastic with a soldering iron.  The power connector wouldn't fit in the case.  Instead of fixing the design and reprinting it I decided to just hack at it until it fit.
+
+<div class="gallery">
+{% include image.html url="mpcnc/controlbox1.jpg" description="Control box" %}
+{% include image.html url="mpcnc/controlbox2.jpg" description="Control box" %}
+{% include image.html url="mpcnc/controlbox3.jpg" description="Control box" %}
+{% include image.html url="mpcnc/controlbox4.jpg" description="Control box" %}
+{% include image.html url="mpcnc/controlbox5.jpg" description="Control box" %}
+{% include image.html url="mpcnc/controlbox6.jpg" description="Control box" %}
+{% include image.html url="mpcnc/controlbox7.jpg" description="Control box" %}
+{% include image.html url="mpcnc/controlbox8.jpg" description="Control box" %}
+</div>
+
+## Control Box 2
+
+Of course, soon after putting the control box together, I realized it had some issues.  First off, the display never fit quite right, and actually damaged the solder connections for the screen when I tried to force it in place.  It still worked, but only if pressed in at just the right angle.
+
+On top of that, there wasn't enough cooling in the box.  Stepper drivers get **hot**.
+
+So I designed my own case and reassembled it.  This one features 2 nice 80mm fans.  I haven't uploaded the designs to thingiverse yet.
+
+<div class="gallery">
+{% include image.html url="mpcnc/controlboxb1.jpg" description="Control box B" %}
+{% include image.html url="mpcnc/controlboxb2.jpg" description="Control box B" %}
+{% include image.html url="mpcnc/controlboxb3.jpg" description="Control box B" %}
+{% include image.html url="mpcnc/controlboxb4.jpg" description="Control box B" %}
+{% include image.html url="mpcnc/controlboxb5.jpg" description="Control box B" %}
+</div>
+
+## First Run
+
+The first run was done with a sharpie and [this pen holder](https://www.thingiverse.com/thing:1612207).
+
+{% include image.html url="mpcnc/helloworld.jpg" description="Hello world" %}
