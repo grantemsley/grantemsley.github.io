@@ -51,7 +51,7 @@ But I do need to be able to quickly stop the machine, so I 3D printed a small co
 
 The **hold** button pauses a job, leaving the mill on and locked in place.  This is handy if I need to quickly pause the job because I need to leave the room or something.  It can be started again with the **resume** button.  The **abort** button is what you hit if the machine crashes (physically crashes, like into the wood) or you notice something wrong with the job and need it to stop.  This can't be resumed.  And the buttom right button is **reset** which completely resets the controller.
 <div class="gallery">
-{% include image.html url="mpcnc/controlpanel.jpg" description="Control panel front" %}
+{% include image.html url="mpcnc/controlpanel1.jpg" description="Control panel front" %}
 {% include image.html url="mpcnc/controlpanel2.jpg" description="Control panel back" %}
 </div>
 
@@ -65,7 +65,7 @@ I swapped out the ethernet holder on the X axis for a modified one that includes
 <div class="gallery">
 {% include image.html url="mpcnc/dragchain1.jpg" description="Drag chain Z axis mount" %}
 {% include image.html url="mpcnc/dragchain2.jpg" description="Drag chain X axis mount right" %}
-{% include image.html url="mpcnc/dragchain4.jpg" description="Drag chain X axis mount left" %}
+{% include image.html url="mpcnc/dragchain3.jpg" description="Drag chain X axis mount left" %}
 </div>
 
 ## Stop Button
