@@ -3,7 +3,9 @@ title: RGB Case Lighting
 category: Hardware
 ---
 
-I want some RGB case lights.  But commercial products only come in two varieties:  Expensive, or dumb.
+<iframe width="560" height="315" src="https://www.youtube.com/embed/01f3QaKR7-o" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+
+I wanted some RGB case lights.  But commercial products only come in two varieties:  Expensive, or dumb.
 
 The expensive ones are expensive.  And often compatible only with their lights and accessories. And require their proprietary software. The dumb ones have dials for color settings or a few preprogramed options with a remote control, but no computer control of the lights.
 
@@ -179,4 +181,3 @@ or start writing my own.  We'll see how that goes. But for now it's looking quit
 
 {% include image.html url="rgblighting/finished.jpg" description="LEDs in action" %}
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/01f3QaKR7-o" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
