@@ -232,3 +232,5 @@ This lets you directly choose any server you want.  There's no function key to f
 - If you don't, it boots from the WDS server
 
 This does NOT allow booting anything utilities, but works in Secure Boot mode.
+
+The one downside to this is the ConfigMgr servers get listed like `192.168.0.11 [Unknown]`.  You have to know which IP address corresponds to the server you want. There doesn't seem to be any way to set their name.
