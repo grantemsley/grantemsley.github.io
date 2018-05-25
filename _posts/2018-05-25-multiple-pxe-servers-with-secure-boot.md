@@ -219,15 +219,15 @@ This lets you directly choose any server you want.  There's no function key to f
 
 - Starts network booting
 - WDS server responds first, loading it's ndsnbp.com boot program.
-- WDS boot program gives the option to press F9 to select a boot server.
-- If you press F9, it will search for other WDS servers, and list all 3 available servers (itself, plus the two ConfigMgr servers).  You can choose any of the servers.
+- WDS boot program gives the option to press F11 to select a boot server.
+- If you press F11, it will search for other WDS servers, and list all 3 available servers (itself, plus the two ConfigMgr servers).  You can choose any of the servers.
 - If you don't, it boots from the WDS server
 
 ### UEFI Client
 
 - Starts network booting
 - Dnsmasq responds first.  It points to the WDS server's network boot program.  If you skipped the Ubuntu setup, The WDS server would respond first and you'd end up in the same place.
-- The WDS boot program gives the option to press F9 to select a boot server.
+- The WDS boot program gives the option to press F9 to select a boot server. (Yes, it's F9 on UEFI and F11 on BIOS, no idea why it's different.)
 - If you press F9, it will search for other WDS servers, and list all 3 available servers (itself, plus the two ConfigMgr servers).  You can choose any of the servers.
 - If you don't, it boots from the WDS server
 
