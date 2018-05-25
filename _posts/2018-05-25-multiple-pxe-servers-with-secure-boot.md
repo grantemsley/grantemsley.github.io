@@ -76,16 +76,16 @@ Edit `/etc/systemd/resolved.conf` to set `DNSStubListener=no`
 
 Remove the symlink `/etc/resolv.conf` and replace with a resolv.conf containing:
 
-<code><pre>
+```
 nameserver 4.2.2.1
 nameserver 4.2.2.2
 search your.domain.here
-</pre></code>
+```
 Replace the nameservers there with whatever you want to use, preferably your AD DNS servers.
 
 The default install doesn't have the configuration to run as a service. Create `/etc/systemd/system/dnsmasq.service`:
 
-<code><pre>
+```
 [Unit]
 Description = Self-created DNSMasq service unit file
 After=sys-subsystem-net-devices-enp4s0.device
@@ -99,14 +99,14 @@ RestartSec=15
 
 [Install]
 WantedBy=sys-subsystem-net-devices-enp4s0.device
-</pre></code>
+```
 
 Replace enp4s0 with the name of your network card, eg. eth0. Thanks to https://nucco.org/2018/05/ubuntu-18-04-chronicles-creating-a-dnsmasq-service.html for the guide on how to fix that
 
 
 Create `/etc/dnsmasq.conf` with:
 
-<code><pre>
+```
 port=0
 log-dhcp
 enable-tftp
@@ -115,7 +115,7 @@ dhcp-range=192.168.0.1,proxy,255.255.255.0
 pxe-prompt="Press F8 for Dnsmasq options", 1
 pxe-service=x86PC, "Go to main menu", lpxelinux
 pxe-service=x86-64_UEFI, "WDS Server for UEFI", boot\x64\wdsmgfw.efi,192.168.0.12
-</pre></code>
+```
 
 Replace the `dhcp-range` with your subnet, and 192.168.0.12 with the IP address of your standard WDS server.
 
@@ -139,7 +139,7 @@ I didn't fully document that here, but it's much faster.
 
 Create a `/var/lib/tftpboot/pxelinux.cfg` folder, and a file named `default` in there with:
 
-<code><pre>
+```
 DEFAULT vesamenu.c32
 NOESCAPE 1
 
@@ -185,10 +185,10 @@ LABEL pmagic
   TEXT HELP
 Parted Magic (https://partedmagic.com)
 
-\- Disk Partitioning and cloning
-\- Erase HDDs, SSDs and NVME drives with proper Secure Erase support
-\- Benchmark and stress testing
-\- Reset local administrator password for Windows
+- Disk Partitioning and cloning
+- Erase HDDs, SSDs and NVME drives with proper Secure Erase support
+- Benchmark and stress testing
+- Reset local administrator password for Windows
   ENDTEXT
 
 LABEL memtest
@@ -199,7 +199,7 @@ LABEL memtest
 Memtest86+ 5.01
 Runs memory diagnostics
   ENDTEXT
-</pre></code>
+```
 
 Edit the IP addresses for your own servers.  You can add more network boot items as desired.  Most network bootable utilities and OSes come with instructions on how to put them in pxelinux's menu.
 
