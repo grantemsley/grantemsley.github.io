@@ -32,8 +32,8 @@ For the thick wires, all the reds are +12.1V, all the blacks are ground.  All th
 
 ## 3D Printed Case
 
-I designed and printed a (case)[/files/psu/psuboardcase.stl] and (lid)[/files/psu/psuboardlid.stl] that hold the circuit board.  The holes in the top fit 1 set of binding posts and 2 DC jacks.  
-I've also uploaded the (fusion 360 design file)[/files/psu/psuboardcase.f3d] in case anyone wants to customize it.
+I designed and printed a [case](/files/psu/psuboardcase.stl) and [lid](/files/psu/psuboardlid.stl) that hold the circuit board.  The holes in the top fit 1 set of binding posts and 2 DC jacks.  
+I've also uploaded the [fusion 360 design file](/files/psu/psuboardcase.f3d) in case anyone wants to customize it.
 
 The holes in the side are for ventilation, since this would otherwise block the vent holes at the output side of the PSU.  You'll need to make sure your printer is doing a good job of bridging to print it, especially around the slot for the board to stick out.
 
