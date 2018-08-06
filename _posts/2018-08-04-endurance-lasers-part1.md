@@ -32,7 +32,7 @@ Well here it is:
 
 There were a few modifications and upgrades I had to make to my CNC machine for the laser:
 
-First order of business was printing the [fan casing](http://endurancelasers.com/download-center-lasers/) that redirects the side fan's air towards the laser.
+First order of business was printing the [ casing](http://endurancelasers.com/download-center-lasers/) that redirects the side fan's air towards the laser.
 
 Then I had to [design a mount for the laser](https://www.thingiverse.com/thing:3026189).  I ended up making a full 3d model of the laser itself with fairly accurate dimensions, then designing two different mount options. I got lots of practice with Fusion 360.
 
@@ -120,7 +120,8 @@ I do still have some issues with the equipment:
 
 * The voltmeter isn't all that great. It resets itself constantly when the laser is being run at < 100% duty cycle.  Powering it separately instead of inline with the laser might help with that. Also, the LEDs for the amperate rating are blue.
 Which makes it nearly invisible when you have the safety glasses on - they block blue light almost entirely.
-* The top fan on the laser died after at most a couple hours of operation. Replacing it was easy enough, and I opted to replace it with a more powerful fan while I was at it.  But 50mm fans aren't super common, so I was lucky to find one quickly.
+* The top fan on the laser died after at most a couple hours of operation. Replacing it was easy enough, and I opted to replace it with a more powerful fan while I was at it.  But 50mm fans aren't super common, so I was lucky to find one quickly. 
+**Update**: I emailed George from Endurance Lasers about the fan dying. He offered to send me a new one right away.  When I told him I had already replaced it, he refunded me the cost of the fan I bought. Now that's good customer service! Very impressed with that.
 
 ## Conclusion
 
