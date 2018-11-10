@@ -2,6 +2,7 @@
 title: D&D TV Table
 category: Woodworking
 ---
+{% include image.html url="dndtvtable/finish1.jpg" description="My D&D TV Table" %}
 
 I play Dungeons and Dragons, and we use a map on the table for our minis.  But printing maps gets expensive. So why not go digital?  Instead, we can use a TV built into a table and display the maps on there.
 
