@@ -1,6 +1,6 @@
 ---
 title: New laser from Endurance Lasers
-category: CNC
+category: Laser
 ---
 
 I mentioned my new laser in my post about the IBM power supply mod. I've been trying to cut 3mm plywood with my cheap chinese lasers, and they just weren't doing a good job of it. 
