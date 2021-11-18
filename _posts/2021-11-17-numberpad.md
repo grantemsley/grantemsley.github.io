@@ -1,4 +1,3 @@
-
 ---
 title: DIY Numberpad Mechanical Keyboard
 category: Hardware
