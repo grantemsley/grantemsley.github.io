@@ -24,7 +24,7 @@ A few things that weren't well explained:
 {% include image.html url="tronxy/unpack3.jpg" description="Lots of parts to assemble" %}
 {% include image.html url="tronxy/controller1.jpg" description="Control box" %}
 {% include image.html url="tronxy/assembled1.jpg" description="Assembly is complete for now" %}
-{% include image.html url="tronxy/assembled2" description="Front view" %}
+{% include image.html url="tronxy/assembled2.jpg" description="Front view" %}
 </div>
 
 
