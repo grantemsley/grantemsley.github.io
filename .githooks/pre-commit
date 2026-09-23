@@ -1,0 +1,70 @@
+#!/bin/sh
+# Block commits that stage an image carrying GPS or camera metadata.
+#
+# Enable once per clone:   git config core.hooksPath .githooks
+# Clean an image first:    magick in.jpg -auto-orient -strip out.jpg
+#
+# Checks the STAGED blob (what would actually be committed), not the working
+# copy. Fails closed: if exiftool is missing or cannot read a file, the commit
+# is refused.
+
+exiftool=$(command -v exiftool 2>/dev/null)
+if [ -z "$exiftool" ]; then
+    for c in "$LOCALAPPDATA/Programs/ExifTool/exiftool.exe" "/c/Program Files/ExifTool/exiftool.exe" /usr/bin/exiftool /usr/local/bin/exiftool; do
+        [ -x "$c" ] && exiftool=$c && break
+    done
+fi
+
+images=$(git diff --cached --name-only --diff-filter=ACMR | grep -i -E '\.(jpe?g|png|gif|webp|heic|heif|tiff?|avif|bmp)$')
+[ -z "$images" ] && exit 0
+
+if [ -z "$exiftool" ]; then
+    echo "pre-commit: images are staged but exiftool is not installed; refusing to commit." >&2
+    echo "  Windows: winget install OliverBetz.ExifTool   Debian/Ubuntu: apt install libimage-exiftool-perl" >&2
+    exit 1
+fi
+
+tmp=$(mktemp -d) || exit 1
+trap 'rm -rf "$tmp"' EXIT
+fail=0
+
+# Newline-separated list; a path with a newline in it is not a real case here.
+echo "$images" | {
+    while IFS= read -r f; do
+        ext=${f##*.}
+        blob="$tmp/staged.$ext"
+        if ! git cat-file blob ":$f" > "$blob"; then
+            echo "pre-commit: could not read staged $f" >&2
+            fail=1; continue
+        fi
+        # A file exiftool cannot parse as an image cannot be vouched for.
+        ftype=$("$exiftool" -q -q -s3 -FileType "$blob" 2>/dev/null)
+        case "$ftype" in
+            JPEG|PNG|GIF|WEBP|HEIC|HEIF|AVIF|TIFF|BMP) ;;
+            *)
+                echo "pre-commit: $f is not a readable image (exiftool says: ${ftype:-nothing})" >&2
+                fail=1; continue ;;
+        esac
+        out=$("$exiftool" -q -q -m -a -G1 -s \
+            '-*GPS*' -Make -Model '-*Lens*' '-*Serial*' '-*Owner*' -MakerNotes:all \
+            "$blob" 2>&1)
+        rc=$?
+        if [ $rc -ne 0 ] && [ -z "$out" ]; then
+            out="(exiftool exited $rc)"
+        fi
+        if [ -n "$out" ]; then
+            echo "pre-commit: $f carries GPS/camera metadata:" >&2
+            echo "$out" | sed 's/^/    /' >&2
+            fail=1
+        fi
+    done
+    exit $fail
+}
+fail=$?
+
+if [ $fail -ne 0 ]; then
+    echo "" >&2
+    echo "Commit refused. Re-export the image(s) with metadata stripped (auto-orient before stripping)." >&2
+    exit 1
+fi
+exit 0
