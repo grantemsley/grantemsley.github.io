@@ -1,6 +1,9 @@
 ---
 title: Tronxy X5SA Pro - Initial Setup
 category: 3D Printing
+permalink: /3d-printing/tronxy-initial
+redirect_from:
+  - "/3d printing/tronxy-initial"
 ---
 
 I already have a Monoprice Maker Select 3D printer (a clone of the Wanhao I3) that I've been using for almost 5 years. It works well, and I've done a ton of upgrades and tuning to it. But my biggest complaints are that even with all the upgrades in the world, it's still pretty slow if you want decent print quality, and the build area is too small for some of the things I want to build.
@@ -37,7 +40,7 @@ The motherboard is a CXY-V6-191017 with TMC2225 drivers. There is actually room 
 
 The system runs as 24v. Great for reducing current requirements for the heaters, but means I'll need 24v fans if I replace them.
 
-According to [https://angryadmin.sesc.dev/posts/tronxy-marlin/#replace-pl-08n-inductive-promixity-sensor-with-bl-touch](this guide), I should be able to backup all the settings using some special gcode commands, but it doesn't seem to work for me. Nothing gets saved to the SD card. You can however download a gcode file full of settings from TronXY's website, and decide them with [http://www.customize-3d.com/chitu-g-code-explained.html](this guide to Chitu G code). Here's what I decoded:
+According to [this guide](https://angryadmin.sesc.dev/posts/tronxy-marlin/#replace-pl-08n-inductive-promixity-sensor-with-bl-touch), I should be able to backup all the settings using some special gcode commands, but it doesn't seem to work for me. Nothing gets saved to the SD card. You can however download a gcode file full of settings from TronXY's website, and decide them with [this guide to Chitu G code](http://www.customize-3d.com/chitu-g-code-explained.html). Here's what I decoded:
 
 ```
 Resume on power lose enabled

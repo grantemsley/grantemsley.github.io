@@ -1,6 +1,9 @@
 ---
 title: Configuration Manager 2012 - MDT Deployment Info to Hardware Inventory
 category: Configuration Manager
+permalink: /configuration-manager/configmgr-2012-mdt-deployment-info
+redirect_from:
+  - "/configuration manager/configmgr-2012-mdt-deployment-info"
 ---
 
 If you are integrating MDT into ConfigMgr 2012, one of the steps it runs is Tattoo, which runs `ztitatoo.wsf`.

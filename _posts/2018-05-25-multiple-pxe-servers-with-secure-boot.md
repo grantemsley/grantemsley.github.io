@@ -1,6 +1,9 @@
 ---
 title: Network Booting - Multiple Servers, UEFI, and Secure Boot
 category: Configuration Manager
+permalink: /configuration-manager/multiple-pxe-servers-with-secure-boot
+redirect_from:
+  - "/configuration manager/multiple-pxe-servers-with-secure-boot"
 ---
 
 In the process of migrating from ConfigMgr 2012R2 to Current Branch, I have 2 ConfigMgr servers on the same network.  In addition to that, I have a regular WDS server that is used for imaging servers, and a Ubuntu PXE server that netboots various utilities.
