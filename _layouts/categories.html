@@ -1,29 +1,18 @@
 ---
 layout: default
-title:    Categories
 ---
+{%- assign latest = site.posts | first -%}
+<p class="site-desc">{{ site.description | escape }}</p>
+<p class="latest"><b>Latest:</b> <a href="{{ latest.url | relative_url }}">{{ latest.title | escape }}</a> ({{ latest.date | date: "%b %Y" }})</p>
 
-{{content}}
+{{ content }}
 
-<div class="categories">
-  {% assign sorted_cats = site.categories | sort %}
-  {% for category in sorted_cats %}
-    <div class="category">
-      <h2 id="{{ category[0] | slugify }}">{{ category[0] }}</h2>
-      <ul class="post-list">
-        {% assign sorted_posts = category[1] | sort: 'title' %}
-        {% for post in sorted_posts %}
-          <li class="spaced">
-            {%- assign date_format = site.minima.date_format | default: "%Y-%m-%d" -%}
-            <h3>
-              <span class="post-link">
-                <small>{{ post.date | date: date_format }}</small>
-                <a href="{{ post.url | relative_url }}">{{ post.title | escape }}</a>
-              </span>
-            </h3>
-          </li>
-        {% endfor %}
-      </ul>
-    </div>
-  {% endfor %}
-</div>
+{% assign sorted_cats = site.categories | sort -%}
+{%- for category in sorted_cats %}
+<h2 class="topic" id="{{ category[0] | slugify }}">{{ category[0] | escape }}</h2>
+<ul class="toc">
+  {%- for post in category[1] %}
+  <li><a href="{{ post.url | relative_url }}">{{ post.title | escape }}</a><span class="y">{{ post.date | date: "%Y" }}</span></li>
+  {%- endfor %}
+</ul>
+{%- endfor %}

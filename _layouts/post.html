@@ -12,3 +12,16 @@ layout: default
   </p>
   {{ content }}
 </article>
+{%- if topic %}
+{%- assign others = site.categories[topic] | where_exp: "p", "p.url != page.url" %}
+{%- if others.size > 0 %}
+<nav class="more" aria-label="More in {{ topic | escape }}">
+  <h2>More in {{ topic | escape }}</h2>
+  <ul>
+    {%- for p in others %}
+    <li><a href="{{ p.url | relative_url }}">{{ p.title | escape }}</a></li>
+    {%- endfor %}
+  </ul>
+</nav>
+{%- endif %}
+{%- endif %}

@@ -1,4 +1,4 @@
 ---
-title: Posts By Date
+title: By date
 layout: posts
 ---

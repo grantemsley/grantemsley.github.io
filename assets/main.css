@@ -87,6 +87,25 @@ hr { border: 0; border-top: 1px solid var(--rule); margin: 2rem 0; }
 
 .post-meta { color: var(--muted); font-size: .9rem; margin-bottom: 1.6rem; }
 
+/* Contents (home) and By date lists: title on the left, year or topic on the right */
+
+.site-desc { color: var(--muted); font-size: .95rem; }
+.latest { padding: .6rem 0; border-block: 1px solid var(--rule); font-size: .95rem; }
+.latest b { font-weight: 600; }
+
+h2.topic { font-size: 1.05rem; margin: 1.8rem 0 .4rem; }
+
+ul.toc { list-style: none; padding: 0; }
+ul.toc li { display: flex; justify-content: space-between; align-items: baseline; gap: 1rem; margin: 0; padding: .15rem 0; }
+ul.toc .y { color: var(--muted); font-size: .88rem; font-variant-numeric: tabular-nums; flex: none; }
+ul.by-date time { color: var(--muted); font-size: .88rem; font-variant-numeric: tabular-nums; margin-right: .4rem; }
+
+/* More in this topic */
+
+nav.more { margin-top: 2.5rem; padding-top: 1rem; border-top: 1px solid var(--rule); font-size: .95rem; }
+nav.more h2 { font-size: 1rem; margin: 0 0 .5rem; }
+nav.more ul { list-style: none; padding: 0; }
+
 /* Images */
 
 img { max-width: 100%; height: auto; }
