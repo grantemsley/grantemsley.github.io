@@ -1,6 +1,7 @@
 ---
 title: MPCNC Machine - Part 2
 category: CNC
+series: "MPCNC Machine"
 ---
 
 So I've had my MPCNC for awhile now, and made quite a few modifications and improvements to it.

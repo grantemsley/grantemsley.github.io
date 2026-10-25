@@ -98,6 +98,11 @@ h2.topic { font-size: 1.05rem; margin: 1.8rem 0 .4rem; }
 ul.toc { list-style: none; padding: 0; }
 ul.toc li { display: flex; justify-content: space-between; align-items: baseline; gap: 1rem; margin: 0; padding: .15rem 0; }
 ul.toc .y { color: var(--muted); font-size: .88rem; font-variant-numeric: tabular-nums; flex: none; }
+ul.toc .parts { color: var(--muted); font-size: .88rem; white-space: nowrap; }
+ul.toc .parts a { margin-left: .3em; }
+
+p.series { font-size: .92rem; color: var(--muted); margin-top: -.8rem; margin-bottom: 1.6rem; }
+
 ul.by-date time { color: var(--muted); font-size: .88rem; font-variant-numeric: tabular-nums; margin-right: .4rem; }
 
 /* More in this topic */

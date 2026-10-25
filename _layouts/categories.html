@@ -11,8 +11,19 @@ layout: default
 {%- for category in sorted_cats %}
 <h2 class="topic" id="{{ category[0] | slugify }}">{{ category[0] | escape }}</h2>
 <ul class="toc">
+  {%- assign shown_series = "|" %}
   {%- for post in category[1] %}
+  {%- if post.series %}
+  {%- capture series_key %}|{{ post.series }}|{% endcapture %}
+  {%- if shown_series contains series_key %}{% continue %}{% endif %}
+  {%- assign shown_series = shown_series | append: series_key %}
+  {%- assign parts = site.posts | where: "series", post.series | sort: "date" %}
+  {%- assign first = parts | first %}
+  <li><span><a href="{{ first.url | relative_url }}">{{ post.series | escape }}</a> <span class="parts">parts
+    {%- for part in parts %} <a href="{{ part.url | relative_url }}">{{ forloop.index }}</a>{% endfor %}</span></span><span class="y">{{ first.date | date: "%Y" }}</span></li>
+  {%- else %}
   <li><a href="{{ post.url | relative_url }}">{{ post.title | escape }}</a><span class="y">{{ post.date | date: "%Y" }}</span></li>
+  {%- endif %}
   {%- endfor %}
 </ul>
 {%- endfor %}

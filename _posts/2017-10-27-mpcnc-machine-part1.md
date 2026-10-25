@@ -1,6 +1,7 @@
 ---
 title: MPCNC Machine - Part 1
 category: CNC
+series: "MPCNC Machine"
 ---
 
 I've always wanted a CNC machine.  But they're expensive, right?  **Not any more!**  Check out the V1 Engineering [Mostly Printed CNC Machine](https://www.v1engineering.com/specifications/).  Since I already have a 3D printer, I managed to build this thing for under $500 Canadian.  At least initially...once you have a shiny new toy, there's always more money to be spent on upgrades and accessories.

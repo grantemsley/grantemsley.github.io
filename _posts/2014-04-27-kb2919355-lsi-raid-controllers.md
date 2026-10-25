@@ -1,6 +1,7 @@
 ---
 title: KB2919355 and LSI Raid Controllers (Dell H200)
 category: IT
+series: "KB2919355 and LSI Raid Controllers (Dell H200)"
 ---
 
 I ran into an interesting problem last week.

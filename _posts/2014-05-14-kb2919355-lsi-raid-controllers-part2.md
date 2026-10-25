@@ -1,6 +1,7 @@
 ---
 title: KB2919355 and LSI Raid Controllers Part 2
 category: IT
+series: "KB2919355 and LSI Raid Controllers (Dell H200)"
 ---
 
 Microsoft has finally released a [knowledge base article about this issue](http://support.microsoft.com/kb/2967012)

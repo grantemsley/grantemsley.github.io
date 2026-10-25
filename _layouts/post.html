@@ -10,16 +10,40 @@ layout: default
     {% endif -%}
     <time datetime="{{ page.date | date_to_xmlschema }}">{{ page.date | date: site.date_format }}</time>
   </p>
+  {%- if page.series %}
+  {%- assign parts = site.posts | where: "series", page.series | sort: "date" %}
+  <p class="series">Part of a series:
+    {%- for part in parts %}
+    {%- if part.url == page.url %} <b>Part {{ forloop.index }}</b>
+    {%- else %} <a href="{{ part.url | relative_url }}">Part {{ forloop.index }}</a>
+    {%- endif %}
+    {%- unless forloop.last %} &middot;{% endunless %}
+    {%- endfor %}
+  </p>
+  {%- endif %}
   {{ content }}
 </article>
 {%- if topic %}
+{%- if page.series %}
+{%- assign others = site.categories[topic] | where_exp: "p", "p.series != page.series" %}
+{%- else %}
 {%- assign others = site.categories[topic] | where_exp: "p", "p.url != page.url" %}
+{%- endif %}
 {%- if others.size > 0 %}
 <nav class="more" aria-label="More in {{ topic | escape }}">
   <h2>More in {{ topic | escape }}</h2>
   <ul>
+    {%- assign shown_series = "|" %}
     {%- for p in others %}
+    {%- if p.series %}
+    {%- capture series_key %}|{{ p.series }}|{% endcapture %}
+    {%- if shown_series contains series_key %}{% continue %}{% endif %}
+    {%- assign shown_series = shown_series | append: series_key %}
+    {%- assign first = site.posts | where: "series", p.series | sort: "date" | first %}
+    <li><a href="{{ first.url | relative_url }}">{{ p.series | escape }}</a> (series)</li>
+    {%- else %}
     <li><a href="{{ p.url | relative_url }}">{{ p.title | escape }}</a></li>
+    {%- endif %}
     {%- endfor %}
   </ul>
 </nav>
