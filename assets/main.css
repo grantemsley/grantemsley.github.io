@@ -1,6 +1,9 @@
-/* emsley.ca - one column, system fonts, light and dark from the reader's setting. */
+/* emsley.ca - full width, system fonts. Light or dark follows the reader's system
+   setting unless the header toggle has set data-theme on <html>. The dark tokens appear
+   twice (system dark, and the toggle's dark) because plain CSS has no mixins. */
 
 :root {
+  color-scheme: light;
   --bg: #ffffff;
   --text: #111111;
   --muted: #6b6b6b;
@@ -16,7 +19,8 @@
 }
 
 @media (prefers-color-scheme: dark) {
-  :root {
+  :root:not([data-theme="light"]) {
+    color-scheme: dark;
     --bg: #161616;
     --text: #e8e8e8;
     --muted: #9a9a9a;
@@ -30,6 +34,22 @@
     --hl-name: #79c0ff;
     --hl-var: #ff9e8e;
   }
+}
+
+:root[data-theme="dark"] {
+  color-scheme: dark;
+  --bg: #161616;
+  --text: #e8e8e8;
+  --muted: #9a9a9a;
+  --link: #8fb0ff;
+  --rule: #2c2c2c;
+  --code-bg: #202020;
+  --hl-comment: #8b949e;
+  --hl-keyword: #d2a8ff;
+  --hl-string: #a5d6a7;
+  --hl-number: #ffb86c;
+  --hl-name: #79c0ff;
+  --hl-var: #ff9e8e;
 }
 
 *, *::before, *::after { box-sizing: border-box; }
@@ -51,7 +71,21 @@ a:focus-visible { outline: 2px solid var(--link); outline-offset: 2px; }
 
 /* Site chrome */
 
-.site-header { margin-bottom: 1.5rem; }
+.site-header { display: flex; justify-content: space-between; align-items: center; gap: 1rem; margin-bottom: 1.5rem; }
+
+.theme-toggle {
+  display: inline-flex;
+  align-items: center;
+  padding: .3rem;
+  border: 1px solid var(--rule);
+  border-radius: 6px;
+  background: none;
+  color: var(--muted);
+  cursor: pointer;
+}
+.theme-toggle:hover { color: var(--text); }
+.theme-toggle:focus-visible { outline: 2px solid var(--link); outline-offset: 2px; }
+.theme-toggle[hidden] { display: none; }
 .site-title { font-weight: 700; font-size: 1.1rem; color: var(--text); text-decoration: none; }
 .site-title:hover { text-decoration: underline; }
 

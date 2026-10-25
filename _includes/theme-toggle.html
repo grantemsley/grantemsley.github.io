@@ -1,0 +1,35 @@
+<script>
+  /* Light/dark toggle. With no saved choice the site follows the system setting; a click
+     saves the opposite of what is showing, and a click that lands back on the system's
+     own choice clears the saved one so the site follows the system again. */
+  (function () {
+    var button = document.querySelector('.theme-toggle');
+    var root = document.documentElement;
+    var systemDark = window.matchMedia('(prefers-color-scheme: dark)');
+    if (!button) return;
+
+    function systemTheme() { return systemDark.matches ? 'dark' : 'light'; }
+    function currentTheme() { return root.getAttribute('data-theme') || systemTheme(); }
+    function updateLabel() {
+      var label = 'Switch to ' + (currentTheme() === 'dark' ? 'light' : 'dark') + ' mode';
+      button.setAttribute('aria-label', label);
+      button.title = label;
+    }
+
+    button.addEventListener('click', function () {
+      var next = currentTheme() === 'dark' ? 'light' : 'dark';
+      if (next === systemTheme()) {
+        root.removeAttribute('data-theme');
+        try { localStorage.removeItem('theme'); } catch (e) {}
+      } else {
+        root.setAttribute('data-theme', next);
+        try { localStorage.setItem('theme', next); } catch (e) {}
+      }
+      updateLabel();
+    });
+    if (systemDark.addEventListener) systemDark.addEventListener('change', updateLabel);
+
+    button.hidden = false;
+    updateLabel();
+  })();
+</script>
