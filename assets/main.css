@@ -105,6 +105,8 @@ p.series { font-size: .92rem; color: var(--muted); margin-top: -.8rem; margin-bo
 
 ul.by-date time { color: var(--muted); font-size: .88rem; font-variant-numeric: tabular-nums; margin-right: .4rem; }
 
+p.tip { margin-top: 2rem; color: var(--muted); font-size: .95rem; }
+
 /* More in this topic */
 
 nav.more { margin-top: 2.5rem; padding-top: 1rem; border-top: 1px solid var(--rule); font-size: .95rem; }

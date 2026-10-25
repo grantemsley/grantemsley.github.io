@@ -22,6 +22,9 @@ layout: default
   </p>
   {%- endif %}
   {{ content }}
+  {%- if site.kofi_url %}
+  <p class="tip">Found this useful? You can <a href="{{ site.kofi_url }}">buy me a coffee on Ko-fi</a>.</p>
+  {%- endif %}
 </article>
 {%- if topic %}
 {%- if page.series %}
