@@ -13,6 +13,9 @@ date_format: "%Y-%m-%d"
 github_username: grantemsley
 thingiverse_username: grantemsley
 
+# Tips: one line at the end of each post (_layouts/post.html). Remove to hide it.
+kofi_url: "https://ko-fi.com/grantemsley"
+
 # Build settings
 markdown: kramdown
 plugins:
