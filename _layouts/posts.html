@@ -8,6 +8,6 @@ layout: default
 <ul class="toc by-date">
   {%- for post in site.posts %}
   {%- assign topic = post.categories | first %}
-  <li><span><time datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: site.date_format }}</time> <a href="{{ post.url | relative_url }}">{{ post.title | escape }}</a></span><span class="y">{{ topic | escape }}</span></li>
+  <li><time datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: site.date_format }}</time><a href="{{ post.url | relative_url }}">{{ post.title | escape }}</a><span class="topic-name">{{ topic | escape }}</span></li>
   {%- endfor %}
 </ul>
