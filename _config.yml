@@ -7,9 +7,7 @@ baseurl: ""
 timezone: America/Toronto
 show_excerpts: false
 permalink: /:categories/:title
-rss: rss
-minima:
-  date_format: "%Y-%m-%d"
+date_format: "%Y-%m-%d"
 
 # Social
 github_username: grantemsley
